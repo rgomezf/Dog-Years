@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var dogYears: UILabel!
     private let firstYear = 15
     private let secondYear = 9
-    var yearsCalc: Int?
+    var yearsCalc = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,8 @@ class ViewController: UIViewController {
             case 2: yearsCalc = firstYear + secondYear
             default: yearsCalc = firstYear + secondYear + (yearEntered - 2) * 4
             }
-            dogYears.text = "\(yearsCalc!)"
+            
+            dogYears.text = String(describing: yearsCalc)
         } else {
             dogYears.text = "No age entered."
         }
